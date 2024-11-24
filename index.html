@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 2</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+        header {
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 28px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .info {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 200px;
+            pointer-events: none;
+            word-wrap: break-word;
+        }
+        .info-left {
+            left: 20px;
+            text-align: left;
+            margin-left: 50px;
+        }
+        .info-right {
+            right: 20px;
+            text-align: right;
+            margin-right: 50px;
+        }
+        canvas {
+            display: block;
+            max-width: 100%;
+        }
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .info {
+                position: relative;
+                top: 0;
+                transform: none;
+                margin: 10px 0;
+            }
+            .info-left, .info-right {
+                text-align: center;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <strong>Práctica 2:</strong> Modelado geométrico, transformaciones y navegación
+    </header>
+    <div class="info info-left">
+        <p><strong>Movimiento:</strong> W, A, S, D</p>
+        <p><strong>Detener vehículo:</strong> Spacebar</p>
+    </div>
+    <canvas id="glCanvas" width="800" height="600"></canvas>
+    <div class="info info-right">
+        <p><strong>Tecla 1:</strong> Solid Shader</p>
+        <p><strong>Tecla 2:</strong> Wireframe Shader</p>
+    </div>
+    <script src="gl-matrix-min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
